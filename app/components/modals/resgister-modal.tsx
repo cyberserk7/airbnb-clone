@@ -13,11 +13,14 @@ import Input from "../inputs/input";
 import toast from "react-hot-toast";
 import Button from "../Button";
 import { signIn } from "next-auth/react";
+import LoginModal from "./login-modal";
+import useLoginModal from "@/hooks/use-login-modal";
 
 type Props = {};
 
 export default function RegisterModal({}: Props) {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -31,6 +34,11 @@ export default function RegisterModal({}: Props) {
       password: "",
     },
   });
+
+  const toggle = useCallback(() => {
+    registerModal.onClose();
+    loginModal.onOpen();
+  }, [loginModal, registerModal]);
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
@@ -66,7 +74,10 @@ export default function RegisterModal({}: Props) {
       <div className="text-neutral-500 text-center mt-4 font-light">
         <div className="flex flex-row items-center justify-center gap-2">
           <div>Already have an account?</div>
-          <div className="text-neutral-800 cursor-pointer hover:underline">
+          <div
+            className="text-neutral-800 cursor-pointer hover:underline"
+            onClick={toggle}
+          >
             Log in
           </div>
         </div>
