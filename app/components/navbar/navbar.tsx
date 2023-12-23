@@ -1,6 +1,7 @@
 "use client";
 
 import Container from "../container";
+import Categories from "./Categories";
 import Logo from "./logo";
 import Search from "./search";
 import UserMenu from "./user-menu";
@@ -27,6 +28,7 @@ const Navbar = ({ currentUser }: NavbarProps) => {
           </div>
         </Container>
       </div>
+      <Categories />
     </div>
   );
 };
