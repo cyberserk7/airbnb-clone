@@ -96,13 +96,14 @@ const RentModal = (props: Props) => {
     axios
       .post("/api/listings", data)
       .then(() => {
-        toast.success("Listing Created!");
+        toast.success("Listing created!");
         router.refresh();
         reset();
         setStep(STEPS.CATEGORY);
+        rentModal.onClose();
       })
       .catch(() => {
-        toast.error("Something went wrong!");
+        toast.error("Something went wrong.");
       })
       .finally(() => {
         setIsLoading(false);
