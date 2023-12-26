@@ -140,10 +140,12 @@ const SearchModal = () => {
           title="When do you want to go?"
           subtitle="Make sure to have your trip planned in advance!"
         />
-        <Calendar
-          value={dateRange}
-          onChange={(value) => setDateRange(value.selection)}
-        />
+        <div className="hidden md:block">
+          <Calendar
+            value={dateRange}
+            onChange={(value) => setDateRange(value.selection)}
+          />
+        </div>
       </div>
     );
   }

@@ -20,8 +20,6 @@ import { FaSkiing } from "react-icons/fa";
 import { BsSnow } from "react-icons/bs";
 import { IoDiamond } from "react-icons/io5";
 
-type Props = {};
-
 export const categories = [
   {
     label: "Beach",
@@ -100,7 +98,7 @@ export const categories = [
   },
 ];
 
-const Categories = (props: Props) => {
+const Categories = () => {
   const params = useSearchParams();
   const category = params?.get("category");
   const pathname = usePathname();
