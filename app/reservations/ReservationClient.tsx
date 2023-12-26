@@ -29,6 +29,7 @@ const ReservationsClient = ({
         .delete(`/api/reservations/${id}`)
         .then(() => {
           toast.success("Reservation cancelled");
+          router.refresh();
         })
         .catch(() => {
           toast.error("Something went wrong");
