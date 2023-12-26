@@ -1,4 +1,4 @@
-export const dynamic = "auto";
+export const dynamic = "force-dynamic";
 
 import Container from "./components/container";
 import EmptyState from "./components/empty-state";
