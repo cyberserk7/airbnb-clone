@@ -1,4 +1,5 @@
-import Image from "next/image";
+export const dynamic = "auto";
+
 import Container from "./components/container";
 import EmptyState from "./components/empty-state";
 import getListings, { IListingsParams } from "./actions/getListings";
