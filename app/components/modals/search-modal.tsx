@@ -129,7 +129,9 @@ const SearchModal = () => {
         onChange={(value) => setLocation(value as CountrySelectValue)}
       />
       <hr />
-      <Map center={location?.latlng} />
+      <div className="hidden md:block">
+        <Map center={location?.latlng} />
+      </div>
     </div>
   );
 
@@ -140,12 +142,10 @@ const SearchModal = () => {
           title="When do you want to go?"
           subtitle="Make sure to have your trip planned in advance!"
         />
-        <div className="hidden md:block">
-          <Calendar
-            value={dateRange}
-            onChange={(value) => setDateRange(value.selection)}
-          />
-        </div>
+        <Calendar
+          value={dateRange}
+          onChange={(value) => setDateRange(value.selection)}
+        />
       </div>
     );
   }
